@@ -2,7 +2,7 @@ from core import *
 import tkinter
 import random
 SCALE = 20
-TICK_RATE = 300
+TICK_RATE = 125
 
 
 class Tetris:
@@ -107,10 +107,12 @@ class Tetris:
     def _draw_posn(self, p):
         x, y = p
         self.canvas.create_rectangle(
-            x * SCALE, (HEIGHT * SCALE) - (y * SCALE),
-            x * SCALE + SCALE // 2,
-            (HEIGHT * SCALE) - (y * SCALE + SCALE // 2),
-            fill='red')
+            x * SCALE,
+            (HEIGHT * SCALE) - (y * SCALE),
+            x * SCALE + SCALE,
+            (HEIGHT * SCALE) - (y * SCALE + SCALE),
+            fill='red',
+        )
 
 
 if __name__ == '__main__':

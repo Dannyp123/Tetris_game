@@ -13,7 +13,7 @@ An ActiveBlock is a block (oriented independent of the grid), with an x and y co
 from collections import namedtuple
 import random
 
-HEIGHT = 40
+HEIGHT = 35
 WIDTH = 20
 
 Block = namedtuple('Block', 'posns')
@@ -72,8 +72,8 @@ class Grid:
         are in bounds and not overlapping.
         '''
         x, y, block = self.current_block
-        for piece in block.posns:
-            rx, ry = piece
+        for blocking in block.posns:
+            rx, ry = blocking
             px = rx + x
             py = ry + y
             p = (px, py)
