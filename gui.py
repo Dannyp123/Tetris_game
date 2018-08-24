@@ -10,7 +10,7 @@ class Tetris:
         self.blocks = 0
         self.parent = parent
         self.canvas = tkinter.Canvas(
-            parent, width=WIDTH * SCALE, height=HEIGHT * SCALE, bg='white')
+            parent, width=WIDTH * SCALE, height=HEIGHT * SCALE, bg='orange')
         self.canvas.pack()
 
         self.g = Grid([], ActiveBlock(WIDTH // 2, HEIGHT - 1, new_block()))
@@ -82,8 +82,8 @@ class Tetris:
                 0,
                 x + SCALE // 2,
                 HEIGHT * SCALE,
-                fill='light grey',
-                outline='white')
+                fill='black',
+                outline='green')
 
         gx = self.g.current_block.x * SCALE + SCALE // 5
         self.canvas.create_rectangle(
@@ -91,8 +91,8 @@ class Tetris:
             0,
             gx + SCALE // 10,
             HEIGHT * SCALE,
-            fill='red2',
-            outline='white')
+            fill='black',
+            outline='black')
 
     def _draw_placed_blocks(self):
         for b in self.g.blocks:
@@ -111,7 +111,7 @@ class Tetris:
             (HEIGHT * SCALE) - (y * SCALE),
             x * SCALE + SCALE,
             (HEIGHT * SCALE) - (y * SCALE + SCALE),
-            fill='red',
+            fill='yellow',
         )
 
 

@@ -62,7 +62,7 @@ class Grid:
         x, y, block = self.current_block
         return Grid(
             self.blocks,
-            ActiveBlock(x, y, Block([(y, -x) for x, y in block.posns])))
+            ActiveBlock(x, y, Block([(-y, x) for x, y in block.posns])))
 
     def is_valid(self):
         ''' Grid -> bool
